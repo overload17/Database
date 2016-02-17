@@ -7,12 +7,12 @@ namespace Database
 {
     public partial class Form1 : Form
     {
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
-        private MySqlConnection connection;
-        private MySqlDataAdapter mySqlDataAdapter;
+        private MySqlConnection _connection;
+        private string _database;
+        private MySqlDataAdapter _mySqlDataAdapter;
+        private string _password;
+        private string _server;
+        private string _uid;
 
         public Form1()
         {
@@ -21,36 +21,37 @@ namespace Database
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            server = "localhost";
-            database = "people";
-            uid = "root";
-            password = "root";
+            _server = "localhost";
+            _database = "people";
+            _uid = "root";
+            _password = "root";
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connectionString = "SERVER=" + _server + ";" + "DATABASE=" + _database + ";" + "UID=" + _uid + ";" +
+                               "PASSWORD=" + _password + ";";
 
-            connection = new MySqlConnection(connectionString);
+            _connection = new MySqlConnection(connectionString);
 
-            if (this.OpenConnection() == true)
+            if (OpenConnection())
             {
-                mySqlDataAdapter = new MySqlDataAdapter("select * from book", connection);
-                DataSet DS = new DataSet();
-                mySqlDataAdapter.Fill(DS);
-                dataGridView1.DataSource = DS.Tables[0];
-                this.CloseConnection();
+                _mySqlDataAdapter = new MySqlDataAdapter("select * from book", _connection);
+                var ds = new DataSet();
+                _mySqlDataAdapter.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
+                CloseConnection();
             }
         }
 
         private void dataGridView1_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable changes = ((DataTable)dataGridView1.DataSource).GetChanges();
+            var changes = ((DataTable) dataGridView1.DataSource).GetChanges();
 
             if (changes != null)
             {
-                mySqlDataAdapter = new MySqlDataAdapter("select * from book", connection);
-                MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
-                mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
-                mySqlDataAdapter.Update(changes);
-                ((DataTable)dataGridView1.DataSource).AcceptChanges();
+                _mySqlDataAdapter = new MySqlDataAdapter("select * from book", _connection);
+                var mcb = new MySqlCommandBuilder(_mySqlDataAdapter);
+                _mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
+                _mySqlDataAdapter.Update(changes);
+                ((DataTable) dataGridView1.DataSource).AcceptChanges();
             }
         }
 
@@ -58,7 +59,7 @@ namespace Database
         {
             try
             {
-                connection.Open();
+                _connection.Open();
                 return true;
             }
             catch (MySqlException ex)
@@ -79,17 +80,15 @@ namespace Database
             }
         }
 
-        private bool CloseConnection()
+        private void CloseConnection()
         {
             try
             {
-                connection.Close();
-                return true;
+                _connection.Close();
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
             }
         }
     }
