@@ -19,7 +19,7 @@ namespace Database
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
             _server = "localhost";
             _database = "people";
@@ -87,6 +87,31 @@ namespace Database
                 _connection.Close();
             }
             catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bntDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var myConnection2 = "SERVER=" + _server + ";" + "DATABASE=" + _database + ";" + "UID=" + _uid + ";" +
+                                    "PASSWORD=" + _password + ";";
+                var query = "delete from book where id='" + textBox1.Text + "';";
+                var myConn2 = new MySqlConnection(myConnection2);
+                var myCommand2 = new MySqlCommand(query, myConn2);
+                MySqlDataReader MyReader2;
+                myConn2.Open();
+                MyReader2 = myCommand2.ExecuteReader();
+                MessageBox.Show("Data Deleted");
+                while (MyReader2.Read())
+                {
+                }
+                myConn2.Close();
+                Form1_Load(sender, e);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

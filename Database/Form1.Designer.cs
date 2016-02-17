@@ -30,19 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bntDelete = new System.Windows.Forms.Button();
-            this.peopleDataSet = new Database.peopleDataSet();
-            this.peopleDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bookTableAdapter = new Database.peopleDataSetTableAdapters.bookTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.peopleDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.peopleDataSet = new Database.peopleDataSet();
+            this.bntDelete = new System.Windows.Forms.Button();
+            this.bookTableAdapter = new Database.peopleDataSetTableAdapters.bookTableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peopleDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peopleDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -60,34 +61,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(756, 317);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowValidated);
-            // 
-            // bntDelete
-            // 
-            this.bntDelete.Location = new System.Drawing.Point(242, 12);
-            this.bntDelete.Name = "bntDelete";
-            this.bntDelete.Size = new System.Drawing.Size(109, 29);
-            this.bntDelete.TabIndex = 3;
-            this.bntDelete.Text = "Удалить";
-            this.bntDelete.UseVisualStyleBackColor = true;
-            // 
-            // peopleDataSet
-            // 
-            this.peopleDataSet.DataSetName = "peopleDataSet";
-            this.peopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // peopleDataSetBindingSource
-            // 
-            this.peopleDataSetBindingSource.DataSource = this.peopleDataSet;
-            this.peopleDataSetBindingSource.Position = 0;
-            // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataMember = "book";
-            this.bookBindingSource.DataSource = this.peopleDataSetBindingSource;
-            // 
-            // bookTableAdapter
-            // 
-            this.bookTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -113,21 +86,59 @@
             this.ageDataGridViewTextBoxColumn.HeaderText = "age";
             this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
             // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataMember = "book";
+            this.bookBindingSource.DataSource = this.peopleDataSetBindingSource;
+            // 
+            // peopleDataSetBindingSource
+            // 
+            this.peopleDataSetBindingSource.DataSource = this.peopleDataSet;
+            this.peopleDataSetBindingSource.Position = 0;
+            // 
+            // peopleDataSet
+            // 
+            this.peopleDataSet.DataSetName = "peopleDataSet";
+            this.peopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bntDelete
+            // 
+            this.bntDelete.Location = new System.Drawing.Point(118, 12);
+            this.bntDelete.Name = "bntDelete";
+            this.bntDelete.Size = new System.Drawing.Size(109, 29);
+            this.bntDelete.TabIndex = 3;
+            this.bntDelete.Text = "Удалить";
+            this.bntDelete.UseVisualStyleBackColor = true;
+            this.bntDelete.Click += new System.EventHandler(this.bntDelete_Click);
+            // 
+            // bookTableAdapter
+            // 
+            this.bookTableAdapter.ClearBeforeFill = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 446);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.bntDelete);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peopleDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peopleDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -143,6 +154,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
