@@ -104,7 +104,7 @@ namespace Database
                 MySqlDataReader MyReader2;
                 myConn2.Open();
                 MyReader2 = myCommand2.ExecuteReader();
-                MessageBox.Show("Data Deleted");
+                MessageBox.Show("Запись удалена");
                 while (MyReader2.Read())
                 {
                 }

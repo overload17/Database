@@ -40,6 +40,7 @@
             this.bntDelete = new System.Windows.Forms.Button();
             this.bookTableAdapter = new Database.peopleDataSetTableAdapters.bookTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleDataSetBindingSource)).BeginInit();
@@ -56,7 +57,7 @@
             this.firstnameDataGridViewTextBoxColumn,
             this.ageDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bookBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 47);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(756, 317);
             this.dataGridView1.TabIndex = 0;
@@ -103,7 +104,7 @@
             // 
             // bntDelete
             // 
-            this.bntDelete.Location = new System.Drawing.Point(118, 12);
+            this.bntDelete.Location = new System.Drawing.Point(258, 336);
             this.bntDelete.Name = "bntDelete";
             this.bntDelete.Size = new System.Drawing.Size(109, 29);
             this.bntDelete.TabIndex = 3;
@@ -117,16 +118,26 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Location = new System.Drawing.Point(152, 341);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 344);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Введите id для удаления:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 446);
+            this.ClientSize = new System.Drawing.Size(793, 370);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.bntDelete);
             this.Controls.Add(this.dataGridView1);
@@ -155,6 +166,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
