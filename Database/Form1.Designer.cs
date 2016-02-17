@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bntAdd = new System.Windows.Forms.Button();
-            this.bntEdit = new System.Windows.Forms.Button();
             this.bntDelete = new System.Windows.Forms.Button();
             this.peopleDataSet = new Database.peopleDataSet();
             this.peopleDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,25 +59,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(756, 317);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bntAdd
-            // 
-            this.bntAdd.Location = new System.Drawing.Point(12, 12);
-            this.bntAdd.Name = "bntAdd";
-            this.bntAdd.Size = new System.Drawing.Size(109, 29);
-            this.bntAdd.TabIndex = 1;
-            this.bntAdd.Text = "Добавить";
-            this.bntAdd.UseVisualStyleBackColor = true;
-            this.bntAdd.Click += new System.EventHandler(this.bntAdd_Click);
-            // 
-            // bntEdit
-            // 
-            this.bntEdit.Location = new System.Drawing.Point(127, 12);
-            this.bntEdit.Name = "bntEdit";
-            this.bntEdit.Size = new System.Drawing.Size(109, 29);
-            this.bntEdit.TabIndex = 2;
-            this.bntEdit.Text = "Изменить";
-            this.bntEdit.UseVisualStyleBackColor = true;
+            this.dataGridView1.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowValidated);
             // 
             // bntDelete
             // 
@@ -139,8 +119,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 446);
             this.Controls.Add(this.bntDelete);
-            this.Controls.Add(this.bntEdit);
-            this.Controls.Add(this.bntAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -156,8 +134,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button bntAdd;
-        private System.Windows.Forms.Button bntEdit;
         private System.Windows.Forms.Button bntDelete;
         private System.Windows.Forms.BindingSource peopleDataSetBindingSource;
         private peopleDataSet peopleDataSet;
