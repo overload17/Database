@@ -7,7 +7,7 @@ namespace Database
 {
     public partial class fMain : Form
     {
-        private readonly IPersonDAO pd = DSFactory.getInstance("MSSQL");
+        private readonly IPersonDAO pd = DSFactory.getInstance("MYSQL");
 
         public fMain()
         {
@@ -40,7 +40,7 @@ namespace Database
             grid.Rows.Clear();
             foreach (var p in ps)
             {
-                object[] row = {p.Id.ToString(), p.Fname, p.Lname, p.Age.ToString()};
+                object[] row = {p.Id.ToString(), p.Lname, p.Fname, p.Age.ToString()};
                 grid.Rows.Add(row);
             }
             grid.Refresh();

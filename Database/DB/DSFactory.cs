@@ -16,7 +16,7 @@ namespace Database
                 case "MYSQL":
                     ds = new DS_MYSQL();
                     break;
-                //case "MONGO": ds = new DS_CSV(file); break;
+                case "MONGODB": ds = new DS_MONGODB(); break;
                 default:
                     throw new InvalidOperationException();
             }

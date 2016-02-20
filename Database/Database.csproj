@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB\DSFactory.cs" />
+    <Compile Include="DB\DS_MONGODB.cs" />
     <Compile Include="DB\DS_MSSQL.cs" />
     <Compile Include="DB\DS_MYSQL.cs" />
     <Compile Include="DB\IPersonDAO.cs" />

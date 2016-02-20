@@ -14,5 +14,9 @@
             Fname = fname;
             Age = age;
         }
+
+        public Person()
+        {
+        }
     }
 }
