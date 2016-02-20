@@ -67,16 +67,28 @@
     <Compile Include="DB\DS_MSSQL.cs" />
     <Compile Include="DB\DS_MYSQL.cs" />
     <Compile Include="DB\IPersonDAO.cs" />
-    <Compile Include="fEdit.cs">
+    <Compile Include="Forms\fAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fEdit.Designer.cs">
+    <Compile Include="Forms\fAdd.Designer.cs">
+      <DependentUpon>fAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fDelete.Designer.cs">
+      <DependentUpon>fDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fEdit.Designer.cs">
       <DependentUpon>fEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="fMain.cs">
+    <Compile Include="Forms\fMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMain.Designer.cs">
+    <Compile Include="Forms\fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
     <Compile Include="peopleDataSet.Designer.cs">
@@ -87,10 +99,16 @@
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="fEdit.resx">
+    <EmbeddedResource Include="Forms\fAdd.resx">
+      <DependentUpon>fAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fDelete.resx">
+      <DependentUpon>fDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fEdit.resx">
       <DependentUpon>fEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fMain.resx">
+    <EmbeddedResource Include="Forms\fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

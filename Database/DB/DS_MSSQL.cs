@@ -23,6 +23,7 @@ namespace Database
 
         public void Create(Person p)
         {
+            _connection.Open();
             var sql = string.Format("Insert Into persons" +
                                     "(id, lname, fname, age) Values(@id, @lname, @fname, @age)");
 
@@ -53,7 +54,8 @@ namespace Database
 
         public void Update(Person p)
         {
-            var sql = string.Format("Update persons Set lname = '{0}', fname = '{1}', age = '{2}' Where CarID = '{3}'",
+            _connection.Open();
+            var sql = string.Format("Update persons Set lname = '{0}', fname = '{1}', age = '{2}' Where id = '{3}'",
                 p.Lname, p.Fname, p.Age, p.Id);
             using (var cmd = new SqlCommand(sql, _connection))
             {
@@ -63,6 +65,7 @@ namespace Database
 
         public void Delete(Person p)
         {
+            _connection.Open();
             var sql = string.Format("Delete from persons where id = '{0}'", p.Id);
             using (var cmd = new SqlCommand(sql, _connection))
             {

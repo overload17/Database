@@ -32,9 +32,9 @@
             this.edtName = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.edtLname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.edtAge = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@
             this.btnOk.TabIndex = 2;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
@@ -73,13 +74,14 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // textBox1
+            // edtLname
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 5;
+            this.edtLname.Location = new System.Drawing.Point(130, 49);
+            this.edtLname.Name = "edtLname";
+            this.edtLname.Size = new System.Drawing.Size(184, 20);
+            this.edtLname.TabIndex = 5;
             // 
             // label2
             // 
@@ -90,12 +92,12 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Измените фамилию:";
             // 
-            // textBox2
+            // edtAge
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 20);
-            this.textBox2.TabIndex = 7;
+            this.edtAge.Location = new System.Drawing.Point(130, 75);
+            this.edtAge.Name = "edtAge";
+            this.edtAge.Size = new System.Drawing.Size(184, 20);
+            this.edtAge.TabIndex = 7;
             // 
             // label3
             // 
@@ -111,9 +113,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 142);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.edtAge);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.edtLname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -132,9 +134,9 @@
         private System.Windows.Forms.TextBox edtName;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox edtLname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox edtAge;
         private System.Windows.Forms.Label label3;
     }
 }
