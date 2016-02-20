@@ -8,6 +8,7 @@ namespace Database
     public partial class fMain : Form
     {
         private readonly IPersonDAO pd = DSFactory.getInstance("MYSQL");
+        //private readonly IPersonDAO pd = DSFactory.getInstance("MSSQL");
 
         public fMain()
         {
