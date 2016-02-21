@@ -2,7 +2,7 @@
 
 namespace Database
 {
-    public class DSFactory
+    public class DBFactory
     {
         public static IPersonDAO getInstance(string name)
         {

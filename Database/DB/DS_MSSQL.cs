@@ -9,13 +9,11 @@ namespace Database
     public class DS_MSSQL : IPersonDAO
     {
         private SqlConnection _connection;
-        private string _database;
-        private string _server;
 
         public void Initialize()
         {
-            _server = "OVERLOAD-ПК";
-            _database = "people";
+            string _server = "OVERLOAD-PC";
+            string _database = "people";
             var connectionString = "Data Source=" + _server + ";" + "Initial Catalog=" + _database + ";" +
                                    "Integrated Security=SSPI;";
             _connection = new SqlConnection(connectionString);
