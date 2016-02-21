@@ -19,6 +19,9 @@ namespace Database
                 case "MONGODB":
                     ds = new DS_MONGODB();
                     break;
+                case "CASSANDRA":
+                    ds = new DS_CASSANDRA();
+                    break;
                 default:
                     throw new InvalidOperationException();
             }
