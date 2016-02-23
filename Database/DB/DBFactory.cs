@@ -22,6 +22,12 @@ namespace Database
                 case "CASSANDRA":
                     ds = new DS_CASSANDRA();
                     break;
+                case "NEO4J":
+                    ds = new DS_NEO4J();
+                    break;
+                case "REDIS":
+                    ds = new DS_REDIS();
+                    break;
                 default:
                     throw new InvalidOperationException();
             }

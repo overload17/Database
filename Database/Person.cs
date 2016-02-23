@@ -2,11 +2,6 @@
 {
     public class Person
     {
-        public int Age;
-        public string Fname;
-        public int Id;
-        public string Lname;
-
         public Person(int id, string lname, string fname, int age)
         {
             Id = id;
@@ -18,5 +13,10 @@
         public Person()
         {
         }
+
+        public int Age { get; set; }
+        public string Fname { get; set; }
+        public int Id { get; set; }
+        public string Lname { get; set; }
     }
 }

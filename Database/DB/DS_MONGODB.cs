@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using MongoDB.Driver.Builders;
 
 namespace Database
 {
     public class DS_MONGODB : IPersonDAO
     {
-        private IMongoCollection<Person> _collection;
         private MongoClient _client;
+        private IMongoCollection<Person> _collection;
         private IMongoDatabase _db;
 
         public void Initialize()
         {
-            string connect = "mongodb://localhost";
+            var connect = "mongodb://localhost";
             _client = new MongoClient(connect);
             _db = _client.GetDatabase("local");
             _collection = _db.GetCollection<Person>("Person");

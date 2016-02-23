@@ -12,8 +12,8 @@ namespace Database
 
         public void Initialize()
         {
-            string _server = "OVERLOAD-PC";
-            string _database = "people";
+            var _server = "OVERLOAD-PC";
+            var _database = "people";
             var connectionString = "Data Source=" + _server + ";" + "Initial Catalog=" + _database + ";" +
                                    "Integrated Security=SSPI;";
             _connection = new SqlConnection(connectionString);

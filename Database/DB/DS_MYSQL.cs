@@ -11,10 +11,10 @@ namespace Database
 
         public void Initialize()
         {
-            string _server = "localhost";
-            string _database = "people";
-            string _uid = "root";
-            string _password = "root";
+            var _server = "localhost";
+            var _database = "people";
+            var _uid = "root";
+            var _password = "root";
             var connectionString = "SERVER=" + _server + ";" + "DATABASE=" + _database + ";" + "UID=" + _uid + ";" +
                                    "PASSWORD=" + _password + ";";
             _connection = new MySqlConnection(connectionString);
